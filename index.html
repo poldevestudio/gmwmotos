@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=6">
+    <link rel="stylesheet" href="css/styles.css?v=7">
 
     <!-- Schema.org Datos Estructurados (SEO Local para Google) -->
     <script type="application/ld+json">
@@ -117,50 +117,74 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (2 Columnas: Propuesta de Valor + Fachada Real del Negocio) -->
     <header id="inicio" class="hero">
-        <img src="images/logo-real.png" alt="Motos GMW Logo Principal" class="hero-logo-img">
-        <h1>EQUIPA TU MOTO. <span>DOMINA LA CALLE.</span></h1>
-        <p>Todo en repuestos, accesorios e indumentaria para el motociclista en Matheu, Belén de Escobar.</p>
-        <div style="display: flex; justify-content: center; margin-top: 0.5rem;">
-            <a href="productos.html" class="btn-primary" style="background-color: transparent; border: 2px solid var(--primary-color);">
-                VER PRODUCTOS
-            </a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <img src="images/logo-real.png" alt="Motos GMW Logo Principal" class="hero-logo-img">
+                <h1>EQUIPA TU MOTO. <span>DOMINA LA CALLE.</span></h1>
+                <p>Todo en repuestos multimarca, accesorios e indumentaria para el motociclista en Matheu, Belén de Escobar.</p>
+                <div class="hero-actions">
+                    <a href="productos.html" class="btn-primary">
+                        <i class="fas fa-boxes"></i> VER COMBOS
+                    </a>
+                    <a href="https://wa.me/5491167543899" target="_blank" class="btn-whatsapp-hero">
+                        <i class="fab fa-whatsapp"></i> HABLAR POR WHATSAPP
+                    </a>
+                </div>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fas fa-map-marker-alt"></i> Juan B. Alberdi 340, Matheu</span>
+                    <span class="hero-badge"><i class="fas fa-shield-alt"></i> +10 Años de Confianza</span>
+                </div>
+            </div>
+
+            <!-- Card de Fachada Real del Local -->
+            <div class="hero-image-card">
+                <div class="hero-image-badge"><i class="fas fa-store"></i> NUESTRO LOCAL EN MATHEU</div>
+                <img src="images/fachada-local.jpg" alt="Fachada comercial de Motos GMW en Matheu" class="hero-store-img">
+                <div class="hero-image-footer">
+                    <span><i class="fas fa-motorcycle"></i> Motos GMW</span>
+                    <span class="open-pill"><i class="fas fa-check-circle"></i> Abierto Lun a Sáb</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Marcas (Marquee) -->
+    <!-- Marcas (Carrusel Infinito / Marquee Continuo sin flechas - Estilo AlmacenPH) -->
     <section class="brands-section">
         <h2>TRABAJAMOS CON LAS <span>MEJORES MARCAS</span></h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow prev" data-target="brandsCarousel" aria-label="Anterior">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="marquee-container" id="brandsCarousel">
+        <div class="brands-marquee-container">
+            <div class="brands-track">
                 <!-- Set 1 -->
-                <div class="brand-item"><img src="images/marcas/honda.png" alt="Honda"></div>
-                <div class="brand-item"><img src="images/marcas/yamaha.png" alt="Yamaha"></div>
-                <div class="brand-item"><img src="images/marcas/motomel.png" alt="Motomel"></div>
-                <div class="brand-item"><img src="images/marcas/zanella.png" alt="Zanella"></div>
-                <div class="brand-item"><img src="images/marcas/LS2.png" alt="LS2 Helmets"></div>
-                <div class="brand-item"><img src="images/marcas/castrol.png" alt="Castrol"></div>
-                <div class="brand-item"><img src="images/marcas/ipone.png" alt="Ipone"></div>
-                <div class="brand-item"><img src="images/marcas/paolucci.png" alt="Paolucci" style="transform: scale(1.35);"></div>
-                <div class="brand-item"><img src="images/marcas/hawk.png" alt="Hawk"></div>
-                <!-- Set 2 (Duplicado para scroll infinito) -->
-                <div class="brand-item"><img src="images/marcas/honda.png" alt="Honda"></div>
-                <div class="brand-item"><img src="images/marcas/yamaha.png" alt="Yamaha"></div>
-                <div class="brand-item"><img src="images/marcas/motomel.png" alt="Motomel"></div>
-                <div class="brand-item"><img src="images/marcas/zanella.png" alt="Zanella"></div>
-                <div class="brand-item"><img src="images/marcas/LS2.png" alt="LS2 Helmets"></div>
-                <div class="brand-item"><img src="images/marcas/castrol.png" alt="Castrol"></div>
-                <div class="brand-item"><img src="images/marcas/ipone.png" alt="Ipone"></div>
-                <div class="brand-item"><img src="images/marcas/paolucci.png" alt="Paolucci" style="transform: scale(1.35);"></div>
-                <div class="brand-item"><img src="images/marcas/hawk.png" alt="Hawk"></div>
+                <div class="brand-item" title="Honda"><img src="images/marcas/honda.svg" alt="Honda"></div>
+                <div class="brand-item" title="Yamaha"><img src="images/marcas/yamaha.svg" alt="Yamaha"></div>
+                <div class="brand-item" title="Castrol"><img src="images/marcas/castrol.svg" alt="Castrol"></div>
+                <div class="brand-item" title="AMA Lubricants"><img src="images/marcas/ama.png" alt="AMA Lubricants"></div>
+                <div class="brand-item" title="LS2 Helmets"><img src="images/marcas/LS2.png" alt="LS2 Helmets"></div>
+                <div class="brand-item" title="Motomel"><img src="images/marcas/motomel.png" alt="Motomel"></div>
+                <div class="brand-item" title="Bajaj"><img src="images/marcas/bajaj.svg" alt="Bajaj"></div>
+                <div class="brand-item" title="Zanella"><img src="images/marcas/zanella.png" alt="Zanella"></div>
+                <div class="brand-item" title="Pirelli"><img src="images/marcas/pirelli.svg" alt="Pirelli"></div>
+                <div class="brand-item" title="Ipone"><img src="images/marcas/ipone.svg" alt="Ipone"></div>
+                <div class="brand-item" title="NGK"><img src="images/marcas/ngk.svg" alt="NGK"></div>
+                <div class="brand-item" title="Hawk"><img src="images/marcas/hawk.png" alt="Hawk"></div>
+                <div class="brand-item" title="Paolucci"><img src="images/marcas/paolucci.png" alt="Paolucci"></div>
+
+                <!-- Set 2 (Duplicado para loop infinito continuo sin cortes) -->
+                <div class="brand-item" title="Honda"><img src="images/marcas/honda.svg" alt="Honda"></div>
+                <div class="brand-item" title="Yamaha"><img src="images/marcas/yamaha.svg" alt="Yamaha"></div>
+                <div class="brand-item" title="Castrol"><img src="images/marcas/castrol.svg" alt="Castrol"></div>
+                <div class="brand-item" title="AMA Lubricants"><img src="images/marcas/ama.png" alt="AMA Lubricants"></div>
+                <div class="brand-item" title="LS2 Helmets"><img src="images/marcas/LS2.png" alt="LS2 Helmets"></div>
+                <div class="brand-item" title="Motomel"><img src="images/marcas/motomel.png" alt="Motomel"></div>
+                <div class="brand-item" title="Bajaj"><img src="images/marcas/bajaj.svg" alt="Bajaj"></div>
+                <div class="brand-item" title="Zanella"><img src="images/marcas/zanella.png" alt="Zanella"></div>
+                <div class="brand-item" title="Pirelli"><img src="images/marcas/pirelli.svg" alt="Pirelli"></div>
+                <div class="brand-item" title="Ipone"><img src="images/marcas/ipone.svg" alt="Ipone"></div>
+                <div class="brand-item" title="NGK"><img src="images/marcas/ngk.svg" alt="NGK"></div>
+                <div class="brand-item" title="Hawk"><img src="images/marcas/hawk.png" alt="Hawk"></div>
+                <div class="brand-item" title="Paolucci"><img src="images/marcas/paolucci.png" alt="Paolucci"></div>
             </div>
-            <button class="carousel-arrow next" data-target="brandsCarousel" aria-label="Siguiente">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
     </section>
 
@@ -245,8 +269,19 @@
     </footer>
 
     <script>
-        // Lógica para arrastrar (drag) con el mouse la tira de marcas y opiniones
-        const sliders = document.querySelectorAll('.marquee-container, .reviews-grid');
+        // Pausar y reanudar el carrusel de marcas con el dedo en celular o mouse
+        const brandsTrack = document.querySelector('.brands-track');
+        if (brandsTrack) {
+            brandsTrack.addEventListener('touchstart', () => {
+                brandsTrack.style.animationPlayState = 'paused';
+            }, { passive: true });
+            brandsTrack.addEventListener('touchend', () => {
+                brandsTrack.style.animationPlayState = 'running';
+            }, { passive: true });
+        }
+
+        // Lógica para arrastrar (drag) con el mouse la tira de opiniones
+        const sliders = document.querySelectorAll('.reviews-grid');
         
         sliders.forEach(slider => {
             let isDown = false;
