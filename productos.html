@@ -37,13 +37,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=14">
+    <link rel="stylesheet" href="css/styles.css?v=15">
     <style>
-        /* Estilos de Combos / Kits */
+        /* Header de Productos */
         .products-header {
-            padding: 8rem 5% 4rem;
+            padding: 8.5rem 5% 4.5rem;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('images/hero-bg.jpg') center/cover;
+            background: linear-gradient(rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.96)), url('images/hero-bg.jpg') center/cover;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* Sección de Catálogo con Fondo Gris Claro Luminoso */
+        .section-products-catalog {
+            background: #eef2f6;
+            padding: 5rem 5% 6rem;
+            position: relative;
         }
         
         .combos-grid {
@@ -54,23 +62,25 @@
             margin: 0 auto;
         }
 
+        /* Tarjetas de Producto Blancas con Relieve y Elevación */
         .combo-card {
-            background-color: var(--bg-card);
-            border: 2px solid #222;
-            border-radius: 12px;
-            padding: 2.2rem 2rem;
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.4rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            overflow: hidden;
         }
 
         .combo-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             border-color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(230, 190, 20, 0.15);
+            box-shadow: 0 20px 40px -10px rgba(230, 190, 20, 0.3), 0 10px 20px rgba(15, 23, 42, 0.06);
         }
 
         .combo-badge {
@@ -81,11 +91,12 @@
             color: #0a0a0a;
             font-size: 0.75rem;
             font-weight: 800;
-            padding: 0.35rem 0.9rem;
+            padding: 0.35rem 0.95rem;
             border-radius: 20px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(230, 190, 20, 0.4);
+            z-index: 2;
         }
 
         .combo-header {
@@ -96,31 +107,33 @@
         }
 
         .combo-icon {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            background: rgba(230, 190, 20, 0.1);
-            width: 60px;
-            height: 60px;
+            font-size: 2rem;
+            color: #b45309;
+            background: rgba(230, 190, 20, 0.15);
+            width: 58px;
+            height: 58px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
-            border: 1px solid rgba(230, 190, 20, 0.25);
+            border: 1.5px solid rgba(230, 190, 20, 0.35);
             flex-shrink: 0;
         }
 
         .combo-title {
-            font-size: 1.35rem;
-            color: var(--text-light);
+            font-size: 1.4rem;
+            color: #0f172a;
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             line-height: 1.2;
+            letter-spacing: 0.5px;
+            font-weight: 700;
         }
 
         .combo-desc {
-            color: var(--text-muted);
+            color: #475569;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.55;
             margin-bottom: 1.5rem;
         }
 
@@ -131,21 +144,22 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            border-top: 1px solid #222;
+            border-top: 1px solid #e2e8f0;
             padding-top: 1.2rem;
         }
 
         .combo-items li {
             font-size: 0.92rem;
-            color: #ddd;
+            color: #1e293b;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 0.7rem;
         }
 
         .combo-items li i {
-            color: var(--primary-color);
-            font-size: 0.85rem;
+            color: #d97706;
+            font-size: 0.9rem;
             flex-shrink: 0;
         }
 
@@ -154,78 +168,90 @@
             align-items: baseline;
             justify-content: space-between;
             margin-bottom: 1.2rem;
-            padding: 0.75rem 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px dashed rgba(230, 190, 20, 0.4);
+            padding: 0.85rem 1.1rem;
+            background: #f8fafc;
+            border: 1.5px dashed rgba(217, 119, 6, 0.45);
             border-radius: 8px;
-            backdrop-filter: blur(4px);
         }
 
         .price-tag {
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: #0f172a;
             font-family: 'Oswald', sans-serif;
             letter-spacing: 0.5px;
         }
 
         .price-note {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: #64748b;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* Fondos temáticos por combo con overlay oscuro */
+        /* Fondos sutiles con textura fotográfica en marca de agua */
         .combo-card.bg-cubiertas {
-            background: linear-gradient(rgba(14, 14, 14, 0.88), rgba(14, 14, 14, 0.96)), url('images/combos/cubiertas.jpg') center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98)), url('images/combos/cubiertas.jpg') center/cover;
         }
 
         .combo-card.bg-creeled {
-            background: linear-gradient(rgba(14, 14, 14, 0.88), rgba(14, 14, 14, 0.96)), url('images/combos/creeled.jpg') center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98)), url('images/combos/creeled.jpg') center/cover;
         }
 
         .combo-card.bg-cilindro {
-            background: linear-gradient(rgba(14, 14, 14, 0.88), rgba(14, 14, 14, 0.96)), url('images/combos/cilindro.jpg') center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98)), url('images/combos/cilindro.jpg') center/cover;
         }
 
         .btn-consultar-combo {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            padding: 0.85rem 1rem;
-            border-radius: 6px;
+            background-color: #0f172a;
+            color: #ffffff;
+            border: 2px solid #0f172a;
+            padding: 0.9rem 1.1rem;
+            border-radius: 8px;
             font-weight: 700;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
-            transition: all 0.3s;
+            gap: 0.65rem;
+            transition: all 0.3s ease;
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
+        .btn-consultar-combo i {
+            color: #25d366;
+            font-size: 1.15rem;
+            transition: transform 0.2s;
+        }
+
         .btn-consultar-combo:hover {
             background-color: var(--primary-color);
             color: #0a0a0a;
-            box-shadow: 0 4px 15px rgba(230, 190, 20, 0.3);
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 20px rgba(230, 190, 20, 0.4);
+        }
+
+        .btn-consultar-combo:hover i {
+            color: #0a0a0a;
+            transform: scale(1.1);
         }
 
         .custom-order-banner {
             max-width: 1200px;
-            margin: 4rem auto 0;
-            background: linear-gradient(135deg, #141414 0%, #1c1c1c 100%);
-            border: 1px solid #333;
+            margin: 4.5rem auto 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid #334155;
             border-left: 5px solid var(--primary-color);
-            border-radius: 12px;
-            padding: 2.5rem;
+            border-radius: 14px;
+            padding: 2.8rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             gap: 1.2rem;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
         }
     </style>
 </head>
@@ -256,7 +282,7 @@
     </header>
 
     <!-- Catálogo de Combos -->
-    <section class="section">
+    <section class="section section-products-catalog">
         <div class="combos-grid">
             
             <!-- Combo 1 (Cubiertas) -->
