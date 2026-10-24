@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=16">
+    <link rel="stylesheet" href="css/styles.css?v=17">
     <style>
         /* Header de Productos */
         .products-header {
@@ -261,8 +261,8 @@
 
     <!-- Header de Productos -->
     <header class="products-header">
-        <h1 style="font-size: 3.5rem;">KITS & <span>COMBOS</span></h1>
-        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px; margin: 0 auto;">Aprovechá nuestras promociones y paquetes seleccionados del mes. Consultá compatibilidad y stock para tu moto en el acto.</p>
+        <h1 style="font-size: 3.5rem;" class="reveal-on-scroll">KITS & <span>COMBOS</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 650px; margin: 0 auto;" class="reveal-on-scroll delay-1">Aprovechá nuestras promociones y paquetes seleccionados del mes. Consultá compatibilidad y stock para tu moto en el acto.</p>
     </header>
 
     <!-- Catálogo de Combos -->
@@ -270,7 +270,7 @@
         <div class="combos-grid">
             
             <!-- Combo 1 (Cubiertas) -->
-            <div class="combo-card bg-cubiertas">
+            <div class="combo-card bg-cubiertas reveal-on-scroll delay-1">
                 <div>
                     <div class="combo-header">
                         <div class="combo-icon"><i class="fas fa-circle-notch"></i></div>
@@ -296,7 +296,7 @@
             </div>
 
             <!-- Combo 2 (Cree LED) -->
-            <div class="combo-card bg-creeled">
+            <div class="combo-card bg-creeled reveal-on-scroll delay-2">
                 <div>
                     <div class="combo-header">
                         <div class="combo-icon"><i class="fas fa-lightbulb"></i></div>
@@ -322,7 +322,7 @@
             </div>
 
             <!-- Combo 3 (Cilindro Reforma) -->
-            <div class="combo-card bg-cilindro">
+            <div class="combo-card bg-cilindro reveal-on-scroll delay-3">
                 <div>
                     <div class="combo-header">
                         <div class="combo-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -350,7 +350,7 @@
         </div>
 
         <!-- Banner de Consulta Personalizada -->
-        <div class="custom-order-banner">
+        <div class="custom-order-banner reveal-scale">
             <h3 style="font-size: 1.8rem; color: var(--text-light); font-family: 'Oswald', sans-serif;">¿BUSCÁS UN REPUESTO O ACCESORIO PUNTUAL?</h3>
             <p style="color: var(--text-muted); max-width: 700px; font-size: 1.05rem;">Si no encontrás lo que necesitás en estos combos, consultanos por WhatsApp. Tenemos stock permanente de piezas originales y alternativas en nuestro local de Matheu.</p>
             <a href="https://wa.me/5491167543899?text=Hola!%20Estoy%20buscando%20un%20repuesto%20espec%C3%ADfico" target="_blank" class="btn-whatsapp" style="padding: 0.8rem 1.8rem; font-size: 1rem;">
@@ -360,7 +360,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="reveal-on-scroll">
         <div class="logo" style="margin-bottom: 1rem;">
             <img src="images/logo-gmw-sin-fondo.png?v=1" alt="Motos GMW Logo" style="height: 60px;">
         </div>
@@ -393,6 +393,24 @@
                 });
             });
         }
+
+        // Scroll Reveal Animations (IntersectionObserver)
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale').forEach(el => {
+            scrollObserver.observe(el);
+        });
     </script>
 </body>
 </html>

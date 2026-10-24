@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css?v=16">
+    <link rel="stylesheet" href="css/styles.css?v=17">
 
     <!-- Schema.org Datos Estructurados (SEO Local para Google) -->
     <script type="application/ld+json">
@@ -118,7 +118,7 @@
     <!-- Hero Section (2 Columnas: Propuesta de Valor + Fachada Real del Negocio) -->
     <header id="inicio" class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content reveal-from-left">
                 <img src="images/logo-gmw-sin-fondo.png?v=1" alt="Motos GMW Logo Principal" class="hero-logo-img">
                 <h1>EQUIPA TU MOTO. <span>DOMINA LA CALLE.</span></h1>
                 <p>Todo en repuestos multimarca, accesorios e indumentaria para el motociclista en Matheu, Belén de Escobar.</p>
@@ -134,7 +134,7 @@
             </div>
 
             <!-- Card de Fachada Real del Local -->
-            <div class="hero-image-card">
+            <div class="hero-image-card reveal-from-right delay-1">
                 <div class="hero-image-badge"><i class="fas fa-store"></i> NUESTRO LOCAL EN MATHEU</div>
                 <img src="images/fachada-local-gmw.jpg?v=1" alt="Fachada comercial de Motos GMW en Matheu" class="hero-store-img">
             </div>
@@ -143,8 +143,8 @@
 
     <!-- Marcas (Carrusel Infinito / Marquee Continuo sin flechas - Estilo AlmacenPH) -->
     <section class="brands-section">
-        <h2>TRABAJAMOS CON LAS <span>MEJORES MARCAS</span></h2>
-        <div class="brands-marquee-container">
+        <h2 class="reveal-on-scroll">TRABAJAMOS CON LAS <span>MEJORES MARCAS</span></h2>
+        <div class="brands-marquee-container reveal-scale delay-1">
             <div class="brands-track">
                 <!-- Set 1 -->
                 <div class="brand-item" title="Honda"><img src="images/marcas/honda.svg" alt="Honda"></div>
@@ -181,8 +181,8 @@
 
     <!-- Opiniones de Clientes -->
     <section id="opiniones" class="section">
-        <h2 class="section-title">NUESTROS <span>CLIENTES</span></h2>
-        <div class="carousel-wrapper">
+        <h2 class="section-title reveal-on-scroll">NUESTROS <span>CLIENTES</span></h2>
+        <div class="carousel-wrapper reveal-on-scroll delay-1">
             <button class="carousel-arrow prev" data-target="reviewsCarousel" aria-label="Anterior">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -201,9 +201,9 @@
 
     <!-- Sobre Nosotros -->
     <section id="nosotros" class="section bg-dark">
-        <h2 class="section-title">SOBRE <span>NOSOTROS</span></h2>
+        <h2 class="section-title reveal-on-scroll">SOBRE <span>NOSOTROS</span></h2>
         <div class="about-grid">
-            <div class="about-text">
+            <div class="about-text reveal-from-left">
                 <p>En <strong>GMW motos</strong> llevamos más de 10 años en el rubro, convirtiéndonos en el punto de encuentro de confianza para todos los motociclistas de Matheu y el partido de Escobar.</p>
                 <p>Entendemos la pasión por las dos ruedas. Por eso, no solo ofrecemos venta de repuestos y la mejor indumentaria, sino que también brindamos asesoramiento técnico para que tu moto siempre esté al 100%.</p>
                 <div class="about-features">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div class="about-image">
+            <div class="about-image reveal-from-right delay-2">
                 <img src="images/nosotros.jpg" alt="Dueños de GMW Motos" style="width: 100%; height: auto; border-radius: 8px; border: 2px solid var(--primary-color);">
             </div>
         </div>
@@ -227,9 +227,9 @@
 
     <!-- Ubicación y Horarios -->
     <section id="contacto" class="section">
-        <h2 class="section-title">DÓNDE <span>ENCONTRARNOS</span></h2>
+        <h2 class="section-title reveal-on-scroll">DÓNDE <span>ENCONTRARNOS</span></h2>
         <div class="location-grid">
-            <div class="info-card">
+            <div class="info-card reveal-from-left">
                 <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
                 <p><strong>Lunes y Sábado:</strong> 09:00 a 17:00 hs</p>
                 <p><strong>Martes a Viernes:</strong> 09:00 a 13:00 y 16:00 a 19:00 hs</p>
@@ -243,7 +243,7 @@
                     <i class="fas fa-directions" style="margin-right: 8px;"></i> CÓMO LLEGAR
                 </a>
             </div>
-            <div class="map-container">
+            <div class="map-container reveal-from-right delay-2">
                 <!-- Google Maps Iframe centrado en GMW MOTOS con marcador rojo -->
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.946399432651!2d-58.82975272346747!3d-34.37799727303723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb618b93c70f6d%3A0x782ffcc0566adbec!2sGMW%20MOTOS!5e0!3m2!1ses!2sar!4v1728945600000!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -251,7 +251,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="reveal-on-scroll">
         <div class="logo" style="margin-bottom: 1rem;">
             <img src="images/logo-gmw-sin-fondo.png?v=1" alt="Motos GMW Logo" style="height: 60px;">
         </div>
@@ -344,6 +344,24 @@
                     container.scrollBy({ left: scrollDistance, behavior: 'smooth' });
                 }
             });
+        });
+
+        // Scroll Reveal Animations (IntersectionObserver)
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale').forEach(el => {
+            scrollObserver.observe(el);
         });
     </script>
 </body>
